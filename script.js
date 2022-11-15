@@ -1,3 +1,4 @@
+let canva = document.querySelector('.canva')
 
 function createGrid(){ 
 let container = document.createElement('div');
@@ -6,7 +7,6 @@ document.getElementById('main').appendChild(container)
 changeToBlack(container)
 }
 
-//cambia de color con el hover
 
 function changeToBlack(container){ 
 container.addEventListener('mouseover', ()=> {
@@ -15,9 +15,12 @@ container.addEventListener('mouseover', ()=> {
 }
 
 
-function gridSixteen (x){
-    for (i = 0; i < x; i++){
+function gridSixteen (rows, cols){
+    canva.style.setProperty('--grid-rows', rows);
+    canva.style.setProperty('--grid-cols', cols);
+    for (i = 0; i < (rows * cols); i++){
         createGrid()
     }
+    console.log(rows, cols)
 }
-gridSixteen(16)
+gridSixteen(16, 16)
