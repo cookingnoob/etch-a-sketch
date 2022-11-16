@@ -27,12 +27,17 @@ root {
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
-    width: 500px;
-    height: 500px;
+    width: 960px;
+    height: 960px;
     background-color: white;
 }
 
 .gridSquares {
     width: auto;
     background-color: white;
+}
+
+.gridBlack {
+    width: auto;
+    background-color: black;
 }

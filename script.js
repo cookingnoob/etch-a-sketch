@@ -3,35 +3,20 @@ let btnSixteen = document.querySelector('#sixteen');
 let btnSixtyfour = document.querySelector('#sixtyfour');
 let btnHundred = document.querySelector('#hundred');
 let resetBtn = document.querySelector('#reset')
-let container;
+let container; 
 
 function createGrid(rows, cols){ 
     for (i = 0; i < (rows * cols); i++){
-        container = document.createElement('div');
-        container.classList.add('gridSquares');
-        document.getElementById('main').appendChild(container);
+        createDiv();
         canva.style.setProperty('--grid-rows', rows);
         canva.style.setProperty('--grid-cols', cols);
-        changeToBlack(container)
-        resetGrid(container)
     }
 }
 
-
-function changeToBlack(container){ 
-container.addEventListener('mouseover', ()=> {
-    container.style.backgroundColor = 'black';
-});
-}
-
-function resetGrid (container){ 
-    resetBtn.addEventListener('click', ()=> {
-        container.style.backgroundColor = 'white';
-    })
-}
-
 btnSixteen.addEventListener('click', ()=> {
-    createGrid(16, 16)
+    createDiv();
+    container.classList.remove('gridBlack');
+    createGrid(16, 16);
     });
 
 btnSixtyfour.addEventListener('click', ()=> {
@@ -41,3 +26,30 @@ btnSixtyfour.addEventListener('click', ()=> {
 btnHundred.addEventListener('click', ()=> {
     createGrid(100,100)
     });
+
+
+
+  function createDiv (){
+    container = document.createElement('div');
+    document.getElementById('main').appendChild(container);
+    container.classList.add('gridSquares');
+    container.classList.remove('gridBlack');
+    changeToBlack(container)
+    resetGrid (container)
+  }
+
+
+
+
+function changeToBlack(container){ 
+container.addEventListener('mouseover', ()=> {
+    container.classList.add('gridBlack');
+});
+}
+
+function resetGrid (container){ 
+    resetBtn.addEventListener('click', ()=> {
+        container.classList.add('gridSquares');
+        container.classList.remove('gridBlack');
+    })
+}
