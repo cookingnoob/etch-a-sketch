@@ -1,4 +1,8 @@
 let canva = document.querySelector('.canva')
+let btnSixteen = document.querySelector('#sixteen');
+let btnSixtyfour = document.querySelector('#sixtyfour');
+let btnHundred = document.querySelector('#hundred');
+
 
 function createGrid(){ 
 let container = document.createElement('div');
@@ -16,11 +20,20 @@ container.addEventListener('mouseover', ()=> {
 
 
 function gridSixteen (rows, cols){
-    canva.style.setProperty('--grid-rows', rows);
-    canva.style.setProperty('--grid-cols', cols);
-    for (i = 0; i < (rows * cols); i++){
+    btnSixteen.addEventListener('click', ()=> {
+        canva.style.setProperty('--grid-rows', rows);
+        canva.style.setProperty('--grid-cols', cols);
+     for (i = 0; i < (rows * cols); i++){
         createGrid()
-    }
-    console.log(rows, cols)
+        }
+    });
 }
+
 gridSixteen(16, 16)
+
+
+ 
+
+
+btnSixtyfour.addEventListener('click', ()=> console.log('hola'))
+btnHundred.addEventListener('click', ()=> console.log('hola'))

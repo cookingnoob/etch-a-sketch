@@ -1,9 +1,26 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+}
+
+.btnContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.gridNum{
+    display: flex;
+}
+
 root {
     --grid-cols: 1;
     --grid-rows: 1;
   }
 
 .canva{
+   
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
@@ -14,5 +31,5 @@ root {
 
 .gridSquares {
     width: auto;
-    background-color: white;
+    background-color: red;
 }
