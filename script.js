@@ -20,20 +20,23 @@ container.addEventListener('mouseover', ()=> {
 
 
 function gridSixteen (rows, cols){
-    btnSixteen.addEventListener('click', ()=> {
-        canva.style.setProperty('--grid-rows', rows);
-        canva.style.setProperty('--grid-cols', cols);
-     for (i = 0; i < (rows * cols); i++){
+    canva.style.setProperty('--grid-rows', rows);
+    canva.style.setProperty('--grid-cols', cols);
+    for (i = 0; i < (rows * cols); i++){
         createGrid()
-        }
-    });
+    }
+    console.log(rows, cols)
 }
 
-gridSixteen(16, 16)
-
-
- 
-
-
-btnSixtyfour.addEventListener('click', ()=> console.log('hola'))
-btnHundred.addEventListener('click', ()=> console.log('hola'))
+btnSixteen.addEventListener('click', ()=> {
+    gridSixteen(16, 16)
+    console.log('hola')
+    });
+btnSixtyfour.addEventListener('click', ()=> {
+    gridSixteen(64, 64)
+    console.log('hola2')
+    });
+btnHundred.addEventListener('click', ()=> {
+    gridSixteen(100,100)
+    console.log('hola3')
+    });
