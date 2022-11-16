@@ -3,15 +3,19 @@ body{
     align-items: center;
     justify-content: center;
     padding: 100px;
+    background-color: antiquewhite;
 }
 
 .btnContainer{
     display: flex;
     flex-direction: column;
+    padding-right: 20px;
+    
 }
 
 .gridNum{
     display: flex;
+    margin-bottom: 10px
 }
 
 root {
@@ -20,16 +24,15 @@ root {
   }
 
 .canva{
-   
     display: grid;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     width: 500px;
     height: 500px;
-    background-color: blue;
+    background-color: white;
 }
 
 .gridSquares {
     width: auto;
-    background-color: red;
+    background-color: white;
 }
